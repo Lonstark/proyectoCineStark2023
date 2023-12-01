@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.Usuario>
+
+@{
+    ViewData["Title"] = "ListaClientes";
+}
+
+<h1>Lista de Clientes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Nuevo</a>
+</p>
+<div class="table-responsive">
+<table class="table border-bottom border-start border-end border-dark table-hover align-middle">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.nomUsu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apeUsu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descSexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nroDoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecNac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celular)
+            </th>
+            <th>
+                Ubigeo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomUsu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apeUsu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descSexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nroDoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecNac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dpto) /
+                @Html.DisplayFor(modelItem => item.prov) /
+                @Html.DisplayFor(modelItem => item.distrito)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-success"}) |
+                @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-primary"}) |
+                @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

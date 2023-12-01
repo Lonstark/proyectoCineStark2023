@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.Cine>
+
+@{
+    ViewData["Title"] = "ListaCines";
+}
+
+<h1>Lista de Cines</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Nuevo</a>
+</p>
+<div class="table-responsive">
+<table class="table border-bottom border-start border-end border-dark table-hover align-middle">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+            <th>
+                Ubigeo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dpto) /
+                @Html.DisplayFor(modelItem => item.prov) /
+                @Html.DisplayFor(modelItem => item.distrito)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-success"}) |
+                @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-primary"}) |
+                @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

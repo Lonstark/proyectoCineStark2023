@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PrjPROYECTO_CINESTARK_2023.props" />
+</Project>

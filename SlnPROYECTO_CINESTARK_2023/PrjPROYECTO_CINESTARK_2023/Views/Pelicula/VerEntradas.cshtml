@@ -1,0 +1,277 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.Boleta>
+
+@{
+    ViewData["Title"] = "VerEntradas";
+}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .navbar {
+            background-color: #0d1f40 !important;
+        }
+
+            .navbar .nav-link {
+                color: #ffff !important;
+            }
+
+            .navbar.scrolled {
+                background-color: #0d1f40 !important;
+                box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .1);
+                transition: color .3s ease-in;
+            }
+
+                .navbar.scrolled .nav-link {
+                    color: #ffff !important;
+                    transition: color .3s ease-in;
+                }
+
+                .navbar.scrolled .navbar-brand {
+                    color: #ffff !important;
+                    transition: color .3s ease-in;
+                }
+
+        .barraBack {
+            margin: 0 20%;
+            width: 60%;
+            margin-top: 20px;
+            margin-top: 100px;
+            border-bottom: 4px solid lightgray;
+            height: 60px;
+        }
+
+        .contBtnBack {
+            margin-left: 50px;
+            float: left;
+            font-size: 20pt;
+            color: rgb(129, 129, 129);
+        }
+
+        .btnBack {
+            font-size: 20pt;
+            font-weight: bold;
+            border: none;
+            color: rgb(129, 129, 129);
+            cursor: pointer;
+        }
+        /*POPUP*/
+        .popup {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            position: absolute;
+            width: 190px !important;
+            height: 190px !important;
+            margin-top: 250px;
+            margin-left: 1053px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #0d1f40;
+            border-radius: 5px;
+            z-index: 1;
+            transition: all 0.3s ease, opacity 0.3s ease;
+        }
+
+            .popup::before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 8px;
+                border-style: solid;
+                border-color: transparent transparent #f9f9f9 transparent;
+            }
+
+            .popup.show {
+                opacity: 1;
+                max-height: 190px !important; /* Ajusta esta altura según sea necesario */
+                max-width: 190px !important;
+            }
+
+        .option-perfil {
+            position: relative;
+            display: grid;
+            font-weight: bold;
+            font-size: 13pt;
+            color: #0d1f40;
+            text-decoration: none;
+            margin: 0 0 10px 5px;
+        }
+
+            .option-perfil::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 40%;
+                height: 2px;
+                background-color: rgb(115, 0, 0);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .option-perfil:hover {
+                text-decoration: none;
+                color: #11367c;
+            }
+
+                .option-perfil:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+
+        .btn-cerrar {
+            width: 100px !important;
+            height: 30px !important;
+            font-size: 15px;
+            background-color: #0d1f40;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+            margin: 2.5px;
+        }
+
+            .btn-cerrar:focus {
+                outline: none;
+            }
+
+            .btn-cerrar:hover,
+            .btn-cerrar:focus {
+                cursor: pointer;
+                background-color: #002f85;
+            }
+    </style>
+    <script src="https://kit.fontawesome.com/554a431f17.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-lg bg-transparent fixed-top navbar-dark border-bottom">
+            <div class="container">
+                <a class="navbar-brand" style="font-size:20pt; font-weight:bold;" href="/Pelicula/ListaPeliculas">CineBot</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/Pelicula/ListaPeliculas" style="font-weight:bold;">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Pelicula/ListaPeliculas" style="font-weight:bold;">Peliculas</a></li>
+                    </ul>
+                    <button onclick="togglePopup()" id="loginButton" type="button" class="ms-5 btn btn-primary">
+                        <span style="display: flex; color: white; justify-content: center; align-items: center;"><i class="bi bi-person-circle" style="font-size:20pt; color: white; margin-right:8px;"></i>@ViewBag.nomUser</span>
+                    </button>
+                    <div class="popup" id="popup">
+                        <a class="option-perfil" href="/Logueo/VerPerfil">Ver Perfil</a>
+                        <a class="option-perfil" href="/Pelicula/VerEntradas">Ver Entradas</a>
+                        <a class="option-perfil" href="/Logueo/CerrarSesion">Cerrar Sesión</a>
+                        <button class="btn-cerrar" onclick="togglePopup()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="barraBack">
+        <div>
+            <span class="contBtnBack">
+                <i class="fa-solid fa-angle-left"></i>
+                <button class="btnBack" onclick="location.href='@Url.Action("ListaPeliculas", "Pelicula")'"> Volver</button>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Entradas Compradas</h1>
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechCompra) | 
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomPeli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomCine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomSala)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.butacas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechCompra) |
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPeli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomCine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomSala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.butacas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('show');
+        }
+    </script>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "35e03110-4fef-47b1-9eda-3116cd73d31c", // The ID of this integration.
+            region: "us-south", // The region your integration is hosted in.
+            serviceInstanceID: "f82d657c-8a1e-428e-8e5f-cb41ce5b5b49", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>

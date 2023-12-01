@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewData["Title"] = "PanelAdmin";
+}
+
+<head>
+    <script src="https://kit.fontawesome.com/554a431f17.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- CONTENEDOR DEL DASHBOARD -->
+<div class="containerDashboard">
+    <!-- NAVEGACION -->
+    <div class="navigationDashboard">
+        <ul class="contenedor_ul p-0">
+            <li class="contenedor_li dash">
+                <a class="contenedor_a">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-film"></i></span>
+                    <span class="title-dash">CineBot</span>
+                </a>
+                <!--<a class="contenedor_a">
+                    <span class="icon"><img width="100px" height="100px" class="logoPrincipal" src="~/img/lana.jpg" /></span>
+                </a>-->
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarCards">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-house"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarClientes">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-user"></i></span>
+                    <span class="title">Usuarios</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarPeliculas">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-clapperboard"></i></span>                    
+                    <span class="title">Películas</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarCines">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-video"></i></span>
+                    <span class="title">Cines</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarSalas">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-door-open"></i></span>
+                    <span class="title">Salas</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarFunciones">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-tape"></i></span>
+                    <span class="title">Funciones</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="#" id="mostrarEntradas">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-ticket"></i></span>
+                    <span class="title">Entradas</span>
+                </a>
+            </li>
+            <li class="contenedor_li">
+                <a class="contenedor_a" href="/Logueo/CerrarSesion" id="">
+                    <span class="icon"><i style="font-size:20pt; display:flex; justify-content:center; align-items:center; margin-top:17px" class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                    <span class="title">Salir</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- CUERPO DEL DASHBOARD -->
+    <div class="mainDashboard">
+        <div style="background-color:rgb(197, 197, 197);" class="topbarDashboard">
+            <div class="toggleDashboard">
+                <i style="font-size:30px;" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="busquedaDashboard">
+                <h2>Bienvenido, @ViewBag.nomUser</h2>
+            </div>
+            <div class="usuarioDashboard">
+                
+            </div>
+        </div>
+        <!-- CARDS DEL DASHBOARD -->
+        <div class="contenedor_main" id="caja">
+
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    @*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
+    <!--  script mostrar VENTANAS EN DASHBOARD MEDIANTE UN CLICK() -->
+    <script>
+        $(document).ready(function () {
+            $('#caja').load('/Administrador/InfoCards');
+        });
+        $(document).ready(function () {
+            $('#mostrarCards').click(function () {
+                $('#caja').load('/Administrador/InfoCards');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarClientes').click(function () {
+                $('#caja').load('/Administrador/ListaClientes');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarPeliculas').click(function () {
+                $('#caja').load('/Administrador/ListaPeliculas');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarCines').click(function () {
+                $('#caja').load('/Administrador/ListaCines');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarSalas').click(function () {
+                $('#caja').load('/Administrador/ListaSalas');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarFunciones').click(function () {
+                $('#caja').load('/Administrador/ListaFunciones');
+            });
+        });
+        $(document).ready(function () {
+            $('#mostrarEntradas').click(function () {
+                $('#caja').load('/Administrador/ListaEntradas');
+            });
+        });
+        $(document).ready(function () {
+            navegacion.classList.toggle("active");
+            main.classList.toggle("active");
+        });
+
+        let lista = document.querySelectorAll(".containerDashboard .contenedor_li");
+
+        function activeLink() {
+            lista.forEach((item) => {
+                item.classList.remove("Hover_Aqui");
+            });
+            this.classList.add("Hover_Aqui");
+        }
+
+        lista.forEach(item => item.addEventListener("mouseover", activeLink));
+
+        // FORMA 1 : HAMBURGUESA MENU
+        let hamburguesa = document.querySelector(".toggleDashboard");
+        let navegacion = document.querySelector(".navigationDashboard");
+        let main = document.querySelector(".mainDashboard");
+
+        hamburguesa.onclick = function () {
+            navegacion.classList.toggle("active");
+            main.classList.toggle("active");
+        }
+
+    </script>
+}

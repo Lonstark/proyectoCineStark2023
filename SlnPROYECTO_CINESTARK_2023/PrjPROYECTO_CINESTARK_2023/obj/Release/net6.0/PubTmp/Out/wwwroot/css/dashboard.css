@@ -1,0 +1,571 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+* {
+   font-family: "Ubuntu", sans-serif;
+   margin: 0px;
+   padding: 0px;
+   box-sizing:border-box;
+}
+
+:root {
+    --blue: #0d1f40;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* No mostrar el Header en este apartado */
+/*header {
+    display: none;
+}*/
+
+.containerDashboard {
+    position: relative;
+    width: 100%;
+}
+
+.navigationDashboard {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+    border-top-right-radius: 0;
+}
+
+/* COD A EJECUTAR CUANDO REALICE UN CLICK EN EL MENU HAMBURGUESA */
+.navigationDashboard.active {
+    width: 80px;
+
+    border-top-right-radius: 0;
+}
+
+.navigationDashboard .contenedor_ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-size: 15pt;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li:hover,
+.navigationDashboard .contenedor_ul .contenedor_li.Hover_Aqui{
+    background-color: var(--white);
+}
+    
+.navigationDashboard .contenedor_ul .contenedor_li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li .contenedor_a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li:hover .contenedor_a,
+.navigationDashboard .contenedor_ul .contenedor_li.Hover_Aqui .contenedor_a{
+    color: var(--blue);
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li .contenedor_a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li .contenedor_a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.dash {
+    margin-top: 50px;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li .contenedor_a .title-dash {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    font-size:18pt;
+    font-weight:bold;
+}
+.navigationDashboard .contenedor_ul .contenedor_li .contenedor_a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li:hover .contenedor_a::before,
+.navigationDashboard .contenedor_ul .contenedor_li.Hover_Aqui .contenedor_a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius:25%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigationDashboard .contenedor_ul .contenedor_li:hover .contenedor_a::after,
+.navigationDashboard .contenedor_ul .contenedor_li.Hover_Aqui .contenedor_a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius:25%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+/* ============= CARDS CONTADORES ============= */
+.mainDashboard {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.9s;
+}
+
+.mainDashboard.active {
+    width: calc(100% - 80px);
+    transition: 0.9s;
+    left: 80px;
+}
+
+.topbarDashboard {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* ============== START MENU HAMBURGUESA ============== */
+.toggleDashboard {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--blue);
+    cursor: pointer;
+}
+/* ============== END MENU HAMBURGUESA ============== */
+
+.busquedaDashboard {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.busquedaDashboard .labelBusqueda {
+    position: relative;
+    width: 100%;
+}
+
+.busquedaDashboard .labelBusqueda .inputBusqueda {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.busquedaDashboard .labelBusqueda ion-icon {
+    position: absolute;
+    top: 25%; 
+    left: 10px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.usuarioDashboard {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.usuarioDashboard img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============= CAJA (MAIN) PRINCIPAL ============= */
+.contenedor_main {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    /*border: 2px solid red;*/
+    min-height: 100vh;
+    display: block;
+}
+
+/* ============ COD CARDS ============ */
+
+.cardsDashboard {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.cardsDashboard .cards {
+    position: relative;
+    background: rgb(207, 207, 207);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardsDashboard .cards .numberCards {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.cardsDashboard .cards .namesCards {
+    color: var(--black2);
+    font-size: 18pt;
+    margin-top: 5px;
+}
+
+.cardsDashboard .cards .logotipoCards {
+    font-size: 3.5em;
+    color: var(--black2);
+}
+
+.cardsDashboard .cards:hover {
+    background: #11367c;
+}
+
+.cardsDashboard .cards:hover .numberCards,
+.cardsDashboard .cards:hover .namesCards,
+.cardsDashboard .cards:hover .logotipoCards {
+    color: var(--white);
+}
+
+
+/* ================ responsive ================412 915 */
+
+@media (max-width: 1150px){
+    .cardsDashboard {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 950px) {
+}
+
+@media (max-width: 900px) {
+    .navigationDashboard {
+        width: 250px;
+        border-top-right-radius: 30px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+    .mainDashboard {
+        width: calc(100% - 250px);
+        left: 250px;
+    }
+}
+
+@media (max-width: 850px) {
+    .navigationDashboard {
+        width: 200px;
+        border-top-right-radius: 30px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    } 
+    .mainDashboard {
+        width: calc(100% - 200px);
+        left: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }   
+}
+
+@media (max-width: 750px) {
+    .cardsDashboard {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .cardsDashboard {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 650px) {
+    .busquedaDashboard {
+        width: 400px;
+    }
+    .mainDashboard.active .usuarioDashboard {
+        width: 50px;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 60px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .busquedaDashboard {
+        width: 350px;
+    }
+    .mainDashboard.active .usuarioDashboard {
+        width: 50px;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 60px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .busquedaDashboard {
+        width: 300px;
+    }
+    .mainDashboard.active .usuarioDashboard {
+        width: 50px;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 60px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cardsDashboard {
+        padding: 5px;
+        grid-gap: 10px;
+    }
+    .busquedaDashboard {
+        width: 250px;
+    }
+    .mainDashboard.active .usuarioDashboard {
+        width: 50px;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 70px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .mainDashboard.active .busquedaDashboard {
+        width: 200px;
+    }
+    .mainDashboard.active .usuarioDashboard {
+        width: 50px;
+    }
+    .mainDashboard .usuarioDashboard {
+        width:70px;
+    }
+    .cardsDashboard {
+        grid-gap: 20px;
+    }
+    .cardsDashboard .cards {
+        padding: 15px;
+    }
+    .cardsDashboard .cards .numberCards {
+        font-size: 1.5rem;
+    }
+    .cardsDashboard .cards .namesCards {
+        font-size: 1rem;
+    }
+    .cardsDashboard .cards .logotipoCards {
+        font-size: 1.5em;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 40px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mainDashboard .busquedaDashboard {
+        display: none;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 45px;
+    }
+    .mainDashboard.active .busquedaDashboard {
+        display: flex;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 30px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .mainDashboard .busquedaDashboard {
+        display: none;
+    }
+    .mainDashboard.active .busquedaDashboard {
+        display: flex;
+    }
+    .mainDashboard .usuarioDashboard {
+        width: 50px;
+    }
+    .navigationDashboard {
+        border-top-right-radius: 30px;
+    }
+    .navigationDashboard.active {
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    .mainDashboard .busquedaDashboard {
+        display: flex;
+    }
+    .busquedaDashboard {
+        width: 50px;
+    }
+}
+
+@media (max-width: 350px) {
+    
+}
+
+@media (max-width: 300px) {
+    .toggleDashboard {
+        display: none;
+    }
+    .navigationDashboard {
+        width: 80px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .mainDashboard {
+        position: absolute;
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+    .busquedaDashboard {
+        width: 120px;
+    }
+    .usuarioDashboard {
+        width: 40px;
+    }
+}
+
+@media (max-width: 250px) {
+}
+
+@media (max-width: 200px) {
+}
+
+@media (max-width: 150px) {
+}

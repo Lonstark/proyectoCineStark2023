@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.FuncionForAdmin>
+
+@{
+    ViewData["Title"] = "ListaFunciones";
+}
+
+<h1>Lista de Funciones</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Nuevo</a>
+</p>
+<div class="table-responsive">
+<table class="table border-bottom border-start border-end border-dark table-hover align-middle">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.nomPeli)
+            </th>
+            <th>
+                Ubigeo
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomCine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomSala)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descFormat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descIdioma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPeli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dpto) /
+                @Html.DisplayFor(modelItem => item.prov) /
+                @Html.DisplayFor(modelItem => item.distrito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomCine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomSala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descFormat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descIdioma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-success"}) |
+                @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-primary"}) |
+                @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

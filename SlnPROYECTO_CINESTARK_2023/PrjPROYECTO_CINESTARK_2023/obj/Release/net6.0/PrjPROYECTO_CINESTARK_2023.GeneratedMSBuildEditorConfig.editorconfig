@@ -1,0 +1,105 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PrjPROYECTO_CINESTARK_2023
+build_property.RootNamespace = PrjPROYECTO_CINESTARK_2023
+build_property.ProjectDir = C:\Users\darkn\Documents\1. PROYECTO INTEGRADOR\SlnPROYECTO_CINESTARK_2023\PrjPROYECTO_CINESTARK_2023\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\darkn\Documents\1. PROYECTO INTEGRADOR\SlnPROYECTO_CINESTARK_2023\PrjPROYECTO_CINESTARK_2023
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/InfoCards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxJbmZvQ2FyZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaCines.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YUNpbmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YUNsaWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaEntradas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YUVudHJhZGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaFunciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YUZ1bmNpb25lcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaPeliculas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YVBlbGljdWxhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/ListaSalas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxMaXN0YVNhbGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Administrador/PanelAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxQYW5lbEFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Logueo/InicioSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9ndWVvXEluaWNpb1Nlc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Logueo/RegistroCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9ndWVvXFJlZ2lzdHJvQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Logueo/VerPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9ndWVvXFZlclBlcmZpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Pelicula/CompraEntrada.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFcQ29tcHJhRW50cmFkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Pelicula/DetallePelicula.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFcRGV0YWxsZVBlbGljdWxhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Pelicula/ListaPeliculas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFcTGlzdGFQZWxpY3VsYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Pelicula/VerEntradas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFcVmVyRW50cmFkYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darkn/Documents/1. PROYECTO INTEGRADOR/SlnPROYECTO_CINESTARK_2023/PrjPROYECTO_CINESTARK_2023/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-frm7g6q4g3

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.Pelicula>
+
+@{
+    ViewData["Title"] = "ListaPeliculas";
+}
+
+<h1>Lista de Peliculas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Nuevo</a>
+</p>
+<div class="table-responsive">
+<table class="table border-bottom border-start border-end border-dark table-hover align-middle">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechEstreno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descGen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descClas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idiomas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.formatos)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                <img src="@Url.Content("/imgPeliculas/" + item.img + ".png")" style="width:80px; height:auto;" alt="@Html.DisplayFor(modelItem => item.nombre)">
+            </td>
+            <td class="col-1">
+                @Html.DisplayFor(modelItem => item.fechEstreno)
+            </td>
+            <td class="col-1">
+                @Html.DisplayFor(modelItem => item.duracion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descGen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descClas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idiomas)
+            </td>
+            <td class="col-2">
+                @Html.DisplayFor(modelItem => item.formatos)
+            </td>
+            <td class="col-2">
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-success"}) |
+                @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<br />
+<div class="container">
+    @for (int i = 0; i < ViewBag.pag; i++)
+    {
+        @Html.ActionLink("" + (i + 1), "ListarArticulos",
+    new { nom = ViewBag.nom, nropag = i },
+    new { @class = "btn btn-dark"})
+
+        <em> | </em>
+    }
+</div>

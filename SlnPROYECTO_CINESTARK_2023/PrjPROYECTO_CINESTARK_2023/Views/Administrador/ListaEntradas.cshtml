@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PrjPROYECTO_CINESTARK_2023.Models.Entrada>
+
+@{
+    ViewData["Title"] = "ListaEntradas";
+}
+
+<h1>Lista de Entradas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Nuevo</a>
+</p>
+<div class="table-responsive">
+<table class="table border-bottom border-start border-end border-dark table-hover align-middle">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.idEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomCli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechCompra) |
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomPeli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.butacas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechCompra) | 
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPeli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.butacas)
+            </td>
+            <td>
+                S/. @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                    S/. @Html.DisplayFor(modelItem => item.total)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-success"}) |
+                @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-primary"}) |
+                @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ }, new {@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
